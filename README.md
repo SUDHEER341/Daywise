@@ -1,1 +1,1 @@
-# Day Wise Practice Problems
+# Daywise
