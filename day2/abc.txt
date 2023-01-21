@@ -1,0 +1,57 @@
+supports some or all of the following:
+Clicking a column header to change the sort order of the Grid.
+
+Dragging column headers to change their size and their order.
+The GridView control displays the values of a data source in a table. Each column represents a field, while each row represents a record.
+
+Support to data source controls, such as SqlDataSource.
+Support sort capabilities.
+Support update and delete capabilities.
+Support paging capabilities.
+Support row selection capabilities.
+Code behind feature access to the GridView object model to dynamically set properties, handle events, and so on.
+Many key fields.
+Many data fields for the hyperlink columns.
+Customized style layout through themes and styles using css and javascript.
+The following operations can be performed using GridView control in ASP.NET using C# code behind.
+
+Feature to Bind data to GridView column
+Feature to Edit data in GridView
+Feature to Delete rows from GridView
+Feature to Update row from database
+Note
+
+The most important feature that we can get by using GridView events are  - RowEditing, RowUpdating, RowDeleting, RowCommand, RowDataBound, RowCancelingEdit, and Pagination.
+
+Fields
+
+BoundColumn To control the order and rendering of columns.
+
+HyperLinkColumn Presents the bound data in HyperLink controls
+
+ButtonColumn Bubbles a user command from within a row to the grid event handler
+
+TemplateColumn Controls which controls are rendered in the column
+
+CommandField Displays Edit, Update, and Cancel links in response to changes in the
+
+GridView control's EditItemIndex property.
+
+Details Of Fields
+
+By explicitly creating a BoundColumn in the Grid's Columns collection, the order and rendering of each column can be controlled. In the BoundField properties, when the DataField and the SortExpressions are given, sorting and rendering the data can be easily done.
+
+A HyperLinkColumn presents the bound data in HyperLink controls. This is typically used to navigate from an item in the grid to a Details view on another page by directly assigning the page URL in NavigationUrl or by rendering it from the database.
+
+With a TemplateColumn, the controls which are rendered in the column and the data fields bound to the controls can be controlled. By using the TemplateColumn, any type of data control can be inserted.
+
+The EditCommandColumn is a special column type that supports in-place editing of the data in one row in the grid. EditCommandColumn interacts with another property of the grid: EditItemIndex. By default, the value of EditItemIndex is -1, meaning none of the rows (items) in the grid are being edited. If EditItemIndex is -1, an "edit" button is displayed in the EditCommandColumn for each of the rows in the grid.
+
+When the "edit" button is clicked, the grid's EditCommand event is thrown. It's up to the programmer to handle this event in the code. The typical logic sets EditItemIndex to the selected row, and then rebinds the data to the grid.
+
+When EditItemIndex is set to a particular row, the EditCommandColumn displays "update" and "cancel" buttons for that row ("edit" is still displayed for the other rows). These buttons cause the UpdateCommand and CancelCommand events to be thrown, respectively.
+
+Types of Events
+
+
+PageIndexChanging event occurs when the property of the grid AllowPaging is set to true, and in the code behind the PageInd
